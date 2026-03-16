@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector | NeuRoDetect</title>
+    <meta name="description" content="Paste news articles to detect if they are fake using AI.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#8b5cf6" />
+                            <stop offset="100%" stop-color="#ec4899" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                NeuRo<span class="text-gradient">Detect</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">How it Works</a></li>
+                <li><a href="dataset.html">Dataset</a></li>
+                <li><a href="contact.html">Contact & Resources</a></li>
+                <li><a href="detection.html" class="active btn btn-primary btn-sm">Try Detector</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem;" id="detector-grid">
+                
+                <div class="glass-card" id="input-section">
+                    <h2 class="mb-4">News <span class="text-gradient">Analyzer</span></h2>
+                    <p class="text-muted mb-4">Paste the article text below. Our NLP model will parse the text and provide a credibility assessment instantly.</p>
+                    
+                    <form id="detection-form">
+                        <div class="input-group">
+                            <label for="article-text" class="input-label">Article Content</label>
+                            <textarea id="article-text" class="textarea-field" placeholder="E.g., Breaking: Scientists have discovered that..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full" style="width: 100%; display: flex; gap: 0.5rem;" id="analyze-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            Analyze Text
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Results Section (Hidden by default) -->
+                <div class="glass-card" id="result-section" style="display: none; transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <h2>Analysis <span class="text-gradient">Results</span></h2>
+                        <button id="reset-btn" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.8rem;">New Analysis</button>
+                    </div>
+
+                    <div style="background: rgba(0,0,0,0.3); border-radius: var(--radius-md); padding: 2rem; text-align: center; margin-bottom: 2rem;">
+                        <h3 class="text-muted mb-2 text-sm uppercase" style="letter-spacing: 2px;">Predicted Classification</h3>
+                        <div id="result-badge" class="status-badge mb-4" style="font-size: 1.5rem; padding: 1rem 2rem;">
+                            <!-- Inserted by JS -->
+                        </div>
+                        <div style="font-size: 3rem; font-weight: 800; font-family: 'Outfit'; margin-top: 1rem; color: var(--text-main);" id="confidence-score">
+                            <!-- Inserted by JS -->
+                        </div>
+                        <p class="text-muted text-sm mt-1">Confidence Score</p>
+                    </div>
+
+                    <div>
+                        <h4 class="mb-4">Linguistic Factors Detected:</h4>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;" id="factors-list">
+                            <!-- Inserted by JS -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NeuRoDetect. Built with Natural Language Processing.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
