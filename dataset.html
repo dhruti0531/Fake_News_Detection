@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset | NeuRoDetect</title>
+    <meta name="description" content="Explore the dataset power NeuRoDetect's fake news detection models.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                NeuRoDetect
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">How it Works</a></li>
+                <li><a href="dataset.html" class="active">Dataset</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="detection.html" class="btn btn-primary btn-sm">Try Detector</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <h1 class="mb-4 text-center">Training <span class="text-gradient">Dataset</span></h1>
+                <p class="text-muted text-center mb-8 text-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">Explore the vast collection of verified real and fake news articles used to train our natural language processing models.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                    <div class="glass-card text-center" style="padding: 2rem;">
+                        <h2 id="stat-total" style="font-size: 2.5rem; margin-bottom: 0.5rem;" class="text-gradient">45K+</h2>
+                        <p class="text-muted">Total Articles Analyzed</p>
+                    </div>
+                    <div class="glass-card text-center" style="padding: 2rem;">
+                        <h2 id="stat-real" style="font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--success);">52%</h2>
+                        <p class="text-muted">Verified True Articles</p>
+                    </div>
+                    <div class="glass-card text-center" style="padding: 2rem;">
+                        <h2 id="stat-fake" style="font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--danger);">48%</h2>
+                        <p class="text-muted">Verified Fake Articles</p>
+                    </div>
+                </div>
+
+                <div class="glass-card mb-8">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+                        <h2 style="margin-bottom: 0;">Dataset Samples</h2>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <label for="csv-upload" class="btn btn-primary btn-sm" style="cursor: pointer; margin: 0;">
+                                ⬆ Upload Custom CSV
+                            </label>
+                            <input type="file" id="csv-upload" accept=".csv" style="display: none;">
+                            <a href="dataset.csv" download class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">⬇ Download Full CSV (12KB)</a>
+                        </div>
+                    </div>
+                    
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--surface-border);">
+                                    <th style="padding: 1rem; color: var(--text-muted); font-weight: 500;">Headline</th>
+                                    <th style="padding: 1rem; color: var(--text-muted); font-weight: 500;">Subject</th>
+                                    <th style="padding: 1rem; color: var(--text-muted); font-weight: 500;">Date</th>
+                                    <th style="padding: 1rem; color: var(--text-muted); font-weight: 500;">Label</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataset-body">
+                                <tr style="border-bottom: 1px solid var(--surface-border); background: rgba(255,255,255,0.02);">
+                                    <td style="padding: 1rem;">Federal Reserve Announces Interest Rate Hike of 0.25%</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Economy</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Oct 12, 2025</td>
+                                    <td style="padding: 1rem;"><span class="status-badge real" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">REAL</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--surface-border);">
+                                    <td style="padding: 1rem;">Shocking: Secret Alien Bunker Found Under the White House</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Politics</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Nov 04, 2025</td>
+                                    <td style="padding: 1rem;"><span class="status-badge fake" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">FAKE</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--surface-border); background: rgba(255,255,255,0.02);">
+                                    <td style="padding: 1rem;">New Study Links Daily Coffee Consumption to Longer Lifespan</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Health</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Jan 15, 2026</td>
+                                    <td style="padding: 1rem;"><span class="status-badge real" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">REAL</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--surface-border);">
+                                    <td style="padding: 1rem;">Local Man Discovers Infinite Energy Glitch Using Only Lemons</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Science</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Feb 28, 2026</td>
+                                    <td style="padding: 1rem;"><span class="status-badge fake" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">FAKE</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--surface-border); background: rgba(255,255,255,0.02);">
+                                    <td style="padding: 1rem;">UN General Assembly Approves New Climate Change Resolution</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Global</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Sep 22, 2025</td>
+                                    <td style="padding: 1rem;"><span class="status-badge real" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">REAL</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--surface-border);">
+                                    <td style="padding: 1rem;">Breaking: NASA Confirms Earth is Flat After All</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Science</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Aug 14, 2025</td>
+                                    <td style="padding: 1rem;"><span class="status-badge fake" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">FAKE</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--surface-border); background: rgba(255,255,255,0.02);">
+                                    <td style="padding: 1rem;">Apple Unveils New MacBook Pro with M5 Chip</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Technology</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Mar 01, 2026</td>
+                                    <td style="padding: 1rem;"><span class="status-badge real" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">REAL</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--surface-border);">
+                                    <td style="padding: 1rem;">You Won't Believe What This Celebrity Eats For Breakfast</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Entertainment</td>
+                                    <td style="padding: 1rem; color: var(--text-muted);">Dec 10, 2025</td>
+                                    <td style="padding: 1rem;"><span class="status-badge fake" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">FAKE</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NeuRoDetect. Built with Natural Language Processing.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

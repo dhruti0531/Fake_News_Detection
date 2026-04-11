@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Resources | NeuRoDetect</title>
+    <meta name="description" content="Get in touch with us or find resources about fake news detection.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#8b5cf6" />
+                            <stop offset="100%" stop-color="#ec4899" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                NeuRo<span class="text-gradient">Detect</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">How it Works</a></li>
+                <li><a href="dataset.html">Dataset</a></li>
+                <li><a href="contact.html" class="active">Contact & Resources</a></li>
+                <li><a href="detection.html" class="btn btn-primary btn-sm">Try Detector</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h1 class="mb-4 text-center">Get in <span class="text-gradient">Touch</span></h1>
+                <p class="text-muted text-center mb-8 text-lg">Have questions about our API or want to contribute? Reach out to us.</p>
+                
+                <div class="glass-card mb-8">
+                    <h2 class="mb-4">Send us a message</h2>
+                    <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                            <div class="input-group" style="margin-bottom: 0;">
+                                <label for="name" class="input-label">Name</label>
+                                <input type="text" id="name" class="textarea-field" style="min-height: auto; padding: 0.8rem 1.2rem; height: 50px;" placeholder="John Doe" required>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 0;">
+                                <label for="email" class="input-label">Email</label>
+                                <input type="email" id="email" class="textarea-field" style="min-height: auto; padding: 0.8rem 1.2rem; height: 50px;" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin-bottom: 0;">
+                            <label for="message" class="input-label">Message</label>
+                            <textarea id="message" class="textarea-field" style="min-height: 150px; padding: 1.2rem;" placeholder="How can we help?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="glass-card text-center">
+                    <h3 class="mb-2">Developer API</h3>
+                    <p class="text-muted mb-4">Integrate NeuRoDetect into your own applications with our robust REST API.</p>
+                    <a href="#" class="btn btn-secondary">Documentation</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NeuRoDetect. Built with Natural Language Processing.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
